@@ -90,7 +90,7 @@ export default function Profile() {
     */}
 
     {/*以下、https://www.youtube.com/watch?v=T33NN_pPeNI&list=WL&index=60&t=66s&ab_channel=BeyondFireship
-    */}
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             console.log(entry)
@@ -104,7 +104,8 @@ export default function Profile() {
 
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el))
-
+    */}
+    
     return(
         <div
         className={styles.Isometric}
