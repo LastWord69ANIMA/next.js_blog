@@ -77,11 +77,11 @@ export default function Home() {
     </div>
 
     <div>
-        <Flex className={styles.home}>
+        <Flex className={styles.prehome}>
             現在、作業中。
         </Flex>
 
-        <Flex className={styles.home}>
+        <Flex className={styles.prehome}>
             
         </Flex>
 
