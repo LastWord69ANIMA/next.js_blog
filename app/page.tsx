@@ -68,9 +68,6 @@ export default function Home() {
         </footer>
         )
     }
-
-    //const { toggleColorMode } = useColorMode(); //この文はreturn文の上に配置
-    // const formBackGround = useColorModeValue("gray.100", "gray.700");
   return (
     <div
     className={styles.Isometric}

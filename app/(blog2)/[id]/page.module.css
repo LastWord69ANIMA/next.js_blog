@@ -127,16 +127,6 @@
   font-size: 8vh;
 }
 
-.home{
-  height:100vh;
-  font-size: 8vh;
-  display: flex;
-  align-items:center;
-  justify-content:center;
-  align-items: center;
-  font-family: headerfont;
-}
-
 .footer p {
   background-color: #c6de106f;
   text-align: center;
@@ -153,6 +143,42 @@
 @font-face  {
   font-family: "headerfont";
   src: url("/DotGothic16-Regular.ttf") format("truetype");
+}
+
+.home{
+  height: 10%;
+  padding: 10px;
+  font-size: 8vh;
+  justify-content:center;
+  align-items: center;
+  font-family: headerfont;
+}
+
+.hiddencontents{
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.hidden{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media(prefers-reduced-motion){
+  .hidden{
+    transition: none;
+  }
+
 }
 
 

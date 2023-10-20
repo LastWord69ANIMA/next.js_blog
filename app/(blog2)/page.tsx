@@ -1,12 +1,30 @@
-//"use client"
-
+import PocketBase from 'pocketbase';
+import Link from 'next/link';
+import CreateNote from './CreateNote';
 import Image from 'next/image'
 import styles from './page.module.css'
-import Link from 'next/link';
 import { Button, Flex, Heading, Input, position, useColorMode, useColorModeValue} from "@chakra-ui/react";
 
 
-export default function Home() {
+
+ export const dynamic = 'auto',
+   dynamicParams = true,
+   revalidate = 0,
+   fetchCache = 'auto',
+   runtime = 'nodejs',
+   preferredRegion = 'auto'
+
+
+async function getBlogs() {
+  const db = new PocketBase('http://127.0.0.1:8090');
+   const data = await db.records.getList('notes');
+  //const res = await fetch('http://127.0.0.1:8090/api/collections/blogs/records?page=1&perPage=30', { cache: 'no-store' });
+  //const data = await res.json();
+  return data?.items as any[];
+}
+
+export default async function BlogsPage() {
+
     const GoToGithub = () => {
         return (
           <Link href="https://github.com/LastWord69ANIMA"
@@ -15,7 +33,7 @@ export default function Home() {
                 src={"/github-icon.svg"}
                 alt={"Picture of Github"}
                 width={50}
-                height={100}
+                height={50}
             ></Image>
           </Link>
         )
@@ -68,36 +86,38 @@ export default function Home() {
         </footer>
         )
     }
-  return (
+
+    const blogs = await getBlogs();
+
+  return(
     <div
-    className={styles.Isometric}
-    >
-
-    <div>
+        className={styles.Isometric}
+        >
         <Header />
+
+        <h1>Blogs</h1>
+      <div className={styles.grid}>
+        {blogs?.map((note) => {
+          return <Note key={note.id} note={note} />;
+        })}
+      </div>
+
+      <CreateNote />
+      <Footer />
     </div>
+  );
+}
 
-    <div>
-        {/*<Image
-            src="/ID003_Western-Castle_night-300x169_waifu2x_noise1_scale4x.png"
-            alt="ファンタジー風背景"
-            layout="fill"
-            objectFit="cover"
-            className={styles.backgroundImage}
-        />*/}
-        <Flex className={styles.home}>
-            現在、作業中。
-        </Flex>
+function Note({ note }: any) {
+  const { id, title, content, created } = note || {};
 
-        <Flex className={styles.home}>
-            以下のリンク及びgithubをご参照お願いします。
-            https://micro-cms-tutorial-seven.vercel.app/
-        </Flex>
-
-    </div>
-    
-        <Footer />
-
-</div>
-  )
+  return (
+    <Link href={`/notes/${id}`}>
+      <div className={styles.note}>
+        <h2>{title}</h2>
+        <h5>{content}</h5>
+        <p>{created}</p>
+      </div>
+    </Link>
+  );
 }
