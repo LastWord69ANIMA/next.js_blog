@@ -3,12 +3,12 @@ import Link from 'next/link';
 import styles from './Notes.module.css';
 import CreateNote from './CreateNote';
 
- export const dynamic = 'auto',
-   dynamicParams = true,
-   revalidate = 0,
-   fetchCache = 'auto',
-   runtime = 'nodejs',
-   preferredRegion = 'auto'
+// export const dynamic = 'auto',
+//   dynamicParams = true,
+//   revalidate = 0,
+//   fetchCache = 'auto',
+//   runtime = 'nodejs',
+//   preferredRegion = 'auto'
 
 async function getNotes() {
   //const db = new PocketBase('http://127.0.0.1:8090');
