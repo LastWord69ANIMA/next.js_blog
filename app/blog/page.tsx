@@ -77,13 +77,16 @@ export default function Home() {
     </div>
 
     <div>
-        <Flex className={styles.home}>
+        <Flex className={styles.prehome}>
             現在、作業中。
         </Flex>
 
-        <Flex className={styles.home}>
-            以下のリンク及びgithubをご参照お願いします。
-            https://micro-cms-tutorial-seven.vercel.app/
+        <Flex className={styles.prehome}>
+            <p>以下のリンク及びgithubをご参照お願いします。</p>
+        </Flex>
+
+        <Flex className={styles.prehome}>
+            <Link href="https://micro-cms-tutorial-seven.vercel.app/">microCMS</Link>
         </Flex>
 
     </div>
