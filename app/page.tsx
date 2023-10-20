@@ -1,95 +1,100 @@
+//"use client"
+
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link';
+import { Button, Flex, Heading, Input, position, useColorMode, useColorModeValue} from "@chakra-ui/react";
+
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    const GoToGithub = () => {
+        return (
+          <Link href="https://github.com/LastWord69ANIMA"
           >
-            By{' '}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+                src={"/github-icon.svg"}
+                alt={"Picture of Github"}
+                width={50}
+                height={100}
+            ></Image>
+          </Link>
+        )
+    }
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    const Header  = () => {
+        return(
+            <header className={styles.header}>
+            <Link
+                href="/"
+                
+            >
+                <h1>
+                    家
+                </h1>
+            </Link>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+            <Link
+                href="/blog"
+            >
+                <h1>
+                    事
+                </h1>
+            </Link>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+            <Link
+                href="/profile"
+            >
+                <h1>
+                    自
+                </h1>
+            </Link>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+            <Link 
+                href="/contact"
+            >
+                <h1>
+                    問
+                </h1>
+            </Link>
+        </header>
+        )
+    }
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    const Footer = () => {
+        return(
+            <footer className={styles.footer}>
+            <GoToGithub />
+            <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
+        </footer>
+        )
+    }
+
+    //const { toggleColorMode } = useColorMode(); //この文はreturn文の上に配置
+    // const formBackGround = useColorModeValue("gray.100", "gray.700");
+  return (
+    <div
+    className={styles.Isometric}
+    >
+
+    <div>
+        <Header />
+    </div>
+
+    <div>
+        {/*<Image
+            src="/ID003_Western-Castle_night-300x169_waifu2x_noise1_scale4x.png"
+            alt="ファンタジー風背景"
+            layout="fill"
+            objectFit="cover"
+            className={styles.backgroundImage}
+        />*/}
+        <Flex className={styles.home}>
+            ポ＾トフォリオ
+        </Flex>
+    </div>
+    
+        <Footer />
+
+</div>
   )
 }
