@@ -34,7 +34,7 @@ export default function Home() {
             </Link>
 
             <Link
-                href="/blog"
+                href="https://micro-cms-tutorial-seven.vercel.app/"
             >
                 <h1>
                     事
