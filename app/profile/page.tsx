@@ -35,7 +35,7 @@ export default function Profile() {
             </Link>
 
             <Link
-                href="/blog"
+                href="https://micro-cms-tutorial-seven.vercel.app/"
             >
                 <h1>
                     事
@@ -70,37 +70,11 @@ export default function Profile() {
         )
     }
 
-    {/*以下、リンク付画像の関数化！！！
-
-    const GoToLanguage = () => {
-
-        return (
-          <Link href="https://github.com/LastWord69ANIMA"
-          >
-            <Image
-                src={"/OIP.jfif"}
-                alt={"Picture of Github"}
-                width={50}
-                height={100}
-            ></Image>
-          </Link>
-        )
-    }
-
+    {/*
+    上記関数は、次回の作業時にまとめてコンポーネント用ディレクトリへ置いておきます。
     */}
 
-    {/*以下、https://www.youtube.com/watch?v=T33NN_pPeNI&list=WL&index=60&t=66s&ab_channel=BeyondFireship
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            console.log(entry)
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            } else {
-                entry.target.classList.remove("show");
-            }
-        });
-    });
+    {/*
 
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el))
