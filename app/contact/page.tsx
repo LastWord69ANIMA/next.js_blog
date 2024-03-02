@@ -1,9 +1,12 @@
+import { useState } from 'react';
+
 
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
 import { Button, Flex, Heading, Input, position, useColorMode, useColorModeValue} from "@chakra-ui/react";
 
+import { PrismaClient } from '@prisma/client'
 
 export default function Home() {
     const GoToGithub = () => {
@@ -67,28 +70,83 @@ export default function Home() {
         </footer>
         )
     }
+
+    const prisma = new PrismaClient()
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        inquiry: '',
+      });
+
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          // Prisma Clientを介してデータベースにデータを保存
+          const result = await prisma.contact.create({
+            data: {
+              name: formData.name,
+              email: formData.email,
+              inquiry: formData.inquiry,
+            },
+          });
+          console.log('Data saved:', result);
+        } catch (error) {
+          console.error('Error saving data:', error);
+        }
+      };
+    
   return (
     <div
     className={styles.Isometric}
     >
 
-    <div>
-        <Header />
-    </div>
+        <div>
+            <Header />
+        </div>
 
-    <div>
-        <Flex className={styles.prehome}>
-            現在、作業中。
-        </Flex>
+        <div>
+            <Flex className={styles.prehome}>
+                <div>
+                    <h1>Contact Form</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        />
+                        <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        />
+                        <textarea
+                        name="inquiry"
+                        placeholder="Inquiry"
+                        value={formData.inquiry}
+                        onChange={handleChange}
+                        />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </Flex>
 
-        <Flex className={styles.prehome}>
-            
-        </Flex>
+            <Flex className={styles.prehome}>
 
-    </div>
+            </Flex>
+
+        </div>
     
         <Footer />
 
-</div>
+    </div>
   )
 }
