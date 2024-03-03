@@ -73,22 +73,11 @@ export default function Profile() {
     {/*
     上記関数は、次回の作業時にまとめてコンポーネント用ディレクトリへ置いておきます。
     */}
-
-    {/*
-
-    const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((el) => observer.observe(el))
-    */}
     
     return(
         <div
         className={styles.Isometric}
-        >
-                {/*
-                背景は別画像でもOK!!!
-                当ページへはドメインに /profile と入力して移動
-                */}
-                
+        >       
                 <Header />
             
             <div> {/*クラス指定して要素を空けたり、動的にしたり */}

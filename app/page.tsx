@@ -78,13 +78,6 @@ export default function Home() {
     </div>
 
     <div>
-        {/*<Image
-            src="/ID003_Western-Castle_night-300x169_waifu2x_noise1_scale4x.png"
-            alt="ファンタジー風背景"
-            layout="fill"
-            objectFit="cover"
-            className={styles.backgroundImage}
-        />*/}
         <Flex className={styles.home}>
             ポ＾トフォリオ
         </Flex>

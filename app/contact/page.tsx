@@ -1,3 +1,4 @@
+"use client"
 import { useState } from 'react';
 
 
@@ -100,53 +101,71 @@ export default function Home() {
         }
       };
     
-  return (
-    <div
-    className={styles.Isometric}
-    >
+    return (
+        <div
+        className={styles.Isometric}
+        >
 
-        <div>
-            <Header />
-        </div>
+            <div>
+                <Header />
+            </div>
 
-        <div>
-            <Flex className={styles.prehome}>
+            <div>
+                
                 <div>
-                    <h1>Contact Form</h1>
-                    <form onSubmit={handleSubmit}>
-                        <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        />
-                        <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        />
-                        <textarea
-                        name="inquiry"
-                        placeholder="Inquiry"
-                        value={formData.inquiry}
-                        onChange={handleChange}
-                        />
-                        <button type="submit">Submit</button>
-                    </form>
+                    <Flex className={styles.prehome}>
+                        <h1>Contact Form</h1>
+                    </Flex>
+                    
+                    <Flex className={styles.home}>
+                        <form onSubmit={handleSubmit} className={styles.form}>
+                            <div>
+                            <label htmlFor="name">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="inquiry">Inquiry</label>
+                                <textarea
+                                    id="inquiry"
+                                    name="inquiry"
+                                    placeholder="Enter your inquiry"
+                                    value={formData.inquiry}
+                                    onChange={handleChange}
+                                ></textarea>
+                            </div>
+                            <Flex className={styles.prehome}>
+                                <button type="submit">Submit</button>
+                            </Flex>
+                        </form>
+                    </Flex >
                 </div>
-            </Flex>
 
-            <Flex className={styles.prehome}>
+                
 
-            </Flex>
+
+
+            </div>
+        
+            <Footer />
 
         </div>
-    
-        <Footer />
-
-    </div>
-  )
+    )
 }

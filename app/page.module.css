@@ -148,7 +148,9 @@
   padding: 10px;
 }
 
-
+.form{
+  width: 300px;
+}
 
 @font-face  {
   font-family: "headerfont";
