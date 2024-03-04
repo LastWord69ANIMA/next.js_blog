@@ -7,6 +7,7 @@ import styles from './page.module.css'
 import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
+import prisma from '../../lib/prisma';
 import { PrismaClient } from '@prisma/client'
 
 export default function Home() {
