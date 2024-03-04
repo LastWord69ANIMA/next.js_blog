@@ -30,6 +30,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prisma": "prisma generate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
