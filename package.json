@@ -31,8 +31,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "postinstall": "npx prisma generate",
-    "build": "next build",
+    "build": "npx prisma generate && npm run build",
     "start": "next start",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
