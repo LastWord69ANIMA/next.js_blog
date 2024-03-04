@@ -96,7 +96,7 @@ export default function Home() {
               inquiry: formData.inquiry,
             },
           });
-          console.log('Data saved:', result);
+            
         } catch (error) {
           console.error('Error saving data:', error);
         }
