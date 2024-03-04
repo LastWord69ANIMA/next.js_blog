@@ -73,7 +73,7 @@ export default function Home() {
         )
     }
 
-    const prisma = new PrismaClient()
+    //const prisma = new PrismaClient()
 
     const [formData, setFormData] = useState({
         name: '',
