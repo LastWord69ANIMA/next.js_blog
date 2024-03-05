@@ -76,7 +76,7 @@ const Footer = () => {
     {/*上記コンポーネントは、別途フォルダにまとめる。 */}
     {/*以下dbとの連携は適宜見やすいように調整*/}
 
-export default function Home() {
+const Home: React.FC = () => {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -228,3 +228,5 @@ export default function Home() {
 
     */
 }
+
+export default Home;
