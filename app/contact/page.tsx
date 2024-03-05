@@ -101,6 +101,7 @@ const Home: React.FC = () => {
             },
           });
             
+          console.log('Data seved successfully.');
         } catch (error) {
           console.error('Error saving data:', error);
         }
@@ -157,7 +158,7 @@ const Home: React.FC = () => {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <input disabled={!formData || !formData.email} type="submit" value="create" />
+                                <button disabled={!formData} type="submit" />
                             </Flex>
                         </form>
                     </Flex >
