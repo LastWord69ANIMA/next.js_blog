@@ -156,7 +156,7 @@ export default function Home() {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <input disabled={!formData.inquiry || !formData.email} type="submit">Submit</input>
+                                <input disabled={!formData.inquiry || !formData.email} type="submit" />
                             </Flex>
                         </form>
                     </Flex >
