@@ -1,3 +1,4 @@
+"use client"
 import React, { ReducerAction, use, useState } from 'react';
 
 
