@@ -87,21 +87,19 @@ const Home: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
 
-      const handleSubmit = async (formData) => {
-        
+      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         try {
-          const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
+          // Prisma Clientを介してデータベースにデータを保存
+          await prisma.contact.create({
+            data: {
+              name: formData.name,
+              email: formData.email,
+              inquiry: formData.inquiry,
             },
-            body: JSON.stringify(formData),
           });
-          if (response.ok) {
-            console.log('Data saved successfully.');
-          } else {
-            console.error('Error saving data.');
-          }
+            
+          console.log('Data seved successfully.');
         } catch (error) {
           console.error('Error saving data:', error);
         }
