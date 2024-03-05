@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../lib/prisma';
-import { create } from 'domain';
 //import { PrismaClient } from '@prisma/client'
 
 //const prisma = new PrismaClient()
@@ -91,16 +90,18 @@ const Home: React.FC = () => {
       const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-          // Prisma Clientを介してデータベースにデータを保存
-          await prisma.contact.create({
-            data: {
-              name: formData.name,
-              email: formData.email,
-              inquiry: formData.inquiry,
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
             },
+            body: JSON.stringify(formData),
           });
-            
-          console.log('Data seved successfully.');
+          if (response.ok) {
+            console.log('Data saved successfully.');
+          } else {
+            console.error('Error saving data.');
+          }
         } catch (error) {
           console.error('Error saving data:', error);
         }
