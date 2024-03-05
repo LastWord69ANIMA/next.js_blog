@@ -78,14 +78,13 @@ const Footer = () => {
     {/*以下dbとの連携は適宜見やすいように調整*/}
 
 const Home: React.FC = () => {
-
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         inquiry: '',
       });
 
-      const handleChange = (e) => {
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
 
