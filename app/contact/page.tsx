@@ -126,7 +126,9 @@ const Home: React.FC = () => {
                     <Flex className={styles.home}>
                         <form onSubmit={handleSubmit} className={styles.form}>
                             <div>
-                            <label htmlFor="name">Name</label>
+                                <Flex>
+                                <label htmlFor="name">Name</label>
+                                </Flex>
                                 <input
                                     type="text"
                                     id="name"
@@ -137,7 +139,9 @@ const Home: React.FC = () => {
                                 />
                             </div>
                             <div>
+                                <Flex>
                                 <label htmlFor="email">Email</label>
+                                </Flex>
                                 <input
                                     type="email"
                                     id="email"
@@ -148,7 +152,9 @@ const Home: React.FC = () => {
                                 />
                             </div>
                             <div>
+                                <Flex>
                                 <label htmlFor="inquiry">Inquiry</label>
+                                </Flex>
                                 <textarea
                                     id="inquiry"
                                     name="inquiry"
@@ -176,61 +182,61 @@ const Home: React.FC = () => {
 
         </div>
     )
-
-    /*
-
-        const NewForm: React.FC = () => {
-        const [name, setFormname] = useState("");
-        const [email, setFormemail] = useState("");
-        const [inquiry, setinquiry] = useState("");
-
-        const submitData = async (e: React.SyntheticEvent) => {
-            e.preventDefault();
-
-            try{
-                //Save the formdata to the database via Prisma
-                await prisma.contact.create({
-                    data:{
-                        name,
-                        email,
-                        inquiry,
-                    },
-                });
-
-                console.log('Data seved successfully.');
-            } catch(error){
-                console.error('Error saving data:',error);
-            }
-        }
-    };
-
-    return(
-        <div>
-            <form onSubmit={submitData}>
-                <h1>contact</h1>
-                <input
-                    onChange={(e) => setFormname(e.target.value)}
-                    placeholder= "name"
-                    type="text"
-                    value={name}
-                />
-                <input 
-                    onChange={(e) => setFormemail(e.target.value)}
-                    placeholder="email"
-                    type="email"
-                    value={email}
-                />
-                <textarea
-                    onChange={(e) -> setInquiry(e.target.value)}
-                    placeholder="inquiry"
-                    value={inquiry}
-                />
-                <input disabled={!FormInquriy || !email || !name} type="submit" value="Create" />
-            </form>
-        </div>
-    );
-
-    */
 }
 
 export default Home;
+/*
+
+const Home: React.FC = () => {
+    const [name, setFormname] = useState("");
+    const [email, setFormemail] = useState("");
+    const [inquiry, setinquiry] = useState("");
+
+    const submitData = async (e: React.SyntheticEvent) => {
+        e.preventDefault();
+
+        try{
+            //Save the formdata to the database via Prisma
+            await prisma.contact.create({
+                data:{
+                    name,
+                    email,
+                    inquiry,
+                },
+            });
+
+            console.log('Data seved successfully.');
+        } catch(error){
+            console.error('Error saving data:',error);
+        }
+    }
+};
+
+return(
+    <div>
+        <form onSubmit={submitData}>
+            <h1>contact</h1>
+            <input
+                onChange={(e) => setFormname(e.target.value)}
+                placeholder= "name"
+                type="text"
+                value={name}
+            />
+            <input 
+                onChange={(e) => setFormemail(e.target.value)}
+                placeholder="email"
+                type="email"
+                value={email}
+            />
+            <textarea
+                onChange={(e) -> setInquiry(e.target.value)}
+                placeholder="inquiry"
+                value={inquiry}
+            />
+            <input disabled={!FormInquriy || !email || !name} type="submit" value="Create" />
+        </form>
+    </div>
+);
+
+export default Home;
+*/
