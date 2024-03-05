@@ -158,7 +158,9 @@ const Home: React.FC = () => {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <button disabled={!formData} type="submit" />
+                                <button disabled={!formData} type="submit">
+                                submit
+                                </button>
                             </Flex>
                         </form>
                     </Flex >
