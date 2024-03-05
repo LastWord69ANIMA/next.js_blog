@@ -87,8 +87,8 @@ const Home: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
 
-      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+      const handleSubmit = async (formData) => {
+        
         try {
           const response = await fetch('/api/contact', {
             method: 'POST',
