@@ -88,7 +88,7 @@ const Home: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
 
-      const handleSubmit = async (e) => {
+      const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
           // Prisma Clientを介してデータベースにデータを保存
