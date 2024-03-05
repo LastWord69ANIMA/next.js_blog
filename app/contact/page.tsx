@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../lib/prisma';
+import { create } from 'domain';
 //import { PrismaClient } from '@prisma/client'
 
 //const prisma = new PrismaClient()
@@ -92,7 +93,7 @@ const Home: React.FC = () => {
         e.preventDefault();
         try {
           // Prisma Clientを介してデータベースにデータを保存
-          const result = await prisma.contact.create({
+          await prisma.contact.create({
             data: {
               name: formData.name,
               email: formData.email,
@@ -156,7 +157,7 @@ const Home: React.FC = () => {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <input disabled={!formData.inquiry || !formData.email} type="submit" />
+                                <input disabled={!formData || !formData.email} type="submit" value="create" />
                             </Flex>
                         </form>
                     </Flex >
