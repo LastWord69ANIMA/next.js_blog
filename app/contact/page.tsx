@@ -88,7 +88,7 @@ const Home: React.FC = () => {
       };
 
       const handleSubmit = async (formData) => {
-        
+        formData.preventDefault();
         try {
           const response = await fetch('/api/contact', {
             method: 'POST',
