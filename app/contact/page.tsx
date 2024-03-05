@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import React, { ReducerAction, use, useState } from 'react';
 
 
 import Image from 'next/image'
@@ -10,70 +10,73 @@ import { Flex } from "@chakra-ui/react";
 import prisma from '../../lib/prisma';
 //import { PrismaClient } from '@prisma/client'
 
+//const prisma = new PrismaClient()
+const GoToGithub = () => {
+    return (
+      <Link href="https://github.com/LastWord69ANIMA"
+      >
+        <Image
+            src={"/github-icon.svg"}
+            alt={"Picture of Github"}
+            width={50}
+            height={100}
+        ></Image>
+      </Link>
+    )
+}
+
+const Header  = () => {
+    return(
+        <header className={styles.header}>
+        <Link
+            href="/"
+            
+        >
+            <h1>
+                家
+            </h1>
+        </Link>
+
+        <Link
+            href="https://micro-cms-tutorial-seven.vercel.app/"
+        >
+            <h1>
+                事
+            </h1>
+        </Link>
+
+        <Link
+            href="/profile"
+        >
+            <h1>
+                自
+            </h1>
+        </Link>
+
+        <Link 
+            href="/contact"
+        >
+            <h1>
+                問
+            </h1>
+        </Link>
+    </header>
+    )
+}
+
+const Footer = () => {
+    return(
+        <footer className={styles.footer}>
+        <GoToGithub />
+        <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
+    </footer>
+    )
+}
+
+    {/*上記コンポーネントは、別途フォルダにまとめる。 */}
+    {/*以下dbとの連携は適宜見やすいように調整*/}
+
 export default function Home() {
-    const GoToGithub = () => {
-        return (
-          <Link href="https://github.com/LastWord69ANIMA"
-          >
-            <Image
-                src={"/github-icon.svg"}
-                alt={"Picture of Github"}
-                width={50}
-                height={100}
-            ></Image>
-          </Link>
-        )
-    }
-
-    const Header  = () => {
-        return(
-            <header className={styles.header}>
-            <Link
-                href="/"
-                
-            >
-                <h1>
-                    家
-                </h1>
-            </Link>
-
-            <Link
-                href="https://micro-cms-tutorial-seven.vercel.app/"
-            >
-                <h1>
-                    事
-                </h1>
-            </Link>
-
-            <Link
-                href="/profile"
-            >
-                <h1>
-                    自
-                </h1>
-            </Link>
-
-            <Link 
-                href="/contact"
-            >
-                <h1>
-                    問
-                </h1>
-            </Link>
-        </header>
-        )
-    }
-
-    const Footer = () => {
-        return(
-            <footer className={styles.footer}>
-            <GoToGithub />
-            <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
-        </footer>
-        )
-    }
-
-    //const prisma = new PrismaClient()
 
     const [formData, setFormData] = useState({
         name: '',
@@ -153,7 +156,7 @@ export default function Home() {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <button type="submit">Submit</button>
+                                <input disabled={!formData.inquiry || !formData.email} type="submit">Submit</input>
                             </Flex>
                         </form>
                     </Flex >
@@ -169,4 +172,59 @@ export default function Home() {
 
         </div>
     )
+
+    /*
+
+        const NewForm: React.FC = () => {
+        const [name, setFormname] = useState("");
+        const [email, setFormemail] = useState("");
+        const [inquiry, setinquiry] = useState("");
+
+        const submitData = async (e: React.SyntheticEvent) => {
+            e.preventDefault();
+
+            try{
+                //Save the formdata to the database via Prisma
+                await prisma.contact.create({
+                    data:{
+                        name,
+                        email,
+                        inquiry,
+                    },
+                });
+
+                console.log('Data seved successfully.');
+            } catch(error){
+                console.error('Error saving data:',error);
+            }
+        }
+    };
+
+    return(
+        <div>
+            <form onSubmit={submitData}>
+                <h1>contact</h1>
+                <input
+                    onChange={(e) => setFormname(e.target.value)}
+                    placeholder= "name"
+                    type="text"
+                    value={name}
+                />
+                <input 
+                    onChange={(e) => setFormemail(e.target.value)}
+                    placeholder="email"
+                    type="email"
+                    value={email}
+                />
+                <textarea
+                    onChange={(e) -> setInquiry(e.target.value)}
+                    placeholder="inquiry"
+                    value={inquiry}
+                />
+                <input disabled={!FormInquriy || !email || !name} type="submit" value="Create" />
+            </form>
+        </div>
+    );
+
+    */
 }
