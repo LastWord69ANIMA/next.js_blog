@@ -84,7 +84,7 @@ const Contactform: React.FC = () => {
         e.preventDefault();
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('../api/route', {
+          const response = await fetch('../../api/route', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
