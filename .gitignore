@@ -47,6 +47,7 @@ layout.txt
 probiders.tsx
 contact.ts
 
+route.ts
 .gitignore
 pb_migrations
 pb_data
