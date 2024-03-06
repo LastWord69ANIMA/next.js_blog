@@ -45,7 +45,7 @@ layout.txt
 /(notes)/
 *.d.ts
 probiders.tsx
-
+contact.ts
 
 .gitignore
 pb_migrations
