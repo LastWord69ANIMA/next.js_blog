@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
-import handler from '@/app/api/contact';
+
 //import handler from '@/app/api/route';
 
 const GoToGithub = () => {
