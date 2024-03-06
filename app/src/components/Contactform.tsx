@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
+import handler from '@/app/api/route';
 //import handler from '@/app/api/route';
 
 const GoToGithub = () => {
@@ -79,48 +80,28 @@ const Contactform: React.FC = () => {
         inquiry: '',
       });
 
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
-
-      const handleSubmit = async (req: NextApiRequest, res: NextApiResponse)  => {
-        if (req.method === 'POST') {
-          try {
-            const { formData } = req.body; // フォームからのデータを取得
-      
-            // Prismaを介してデータベースに保存
-            const createdData = await prisma.contact.create({
-              data: {
-                name: formData.name,
-                email: formData.email,
-                inquiry: formData.inquiry,
-              },
-            });
-      
-            res.status(201).json({ message: 'Data saved successfully', data: createdData });
-          } catch (error) {
-            console.error('Error saving data:', error);
-            res.status(500).json({ message: 'Error saving data' });
-          }
-        } else {
-          res.status(302).json({ message: 'Method Not Allowed' });
-        }
-      };
-    /*
-            data: {
-              name: formData.name,
-              email: formData.email,
-              inquiry: formData.inquiry,
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          // フォームデータをサーバーに送信
+          const response = await fetch('../api/route', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
             },
+            body: JSON.stringify(formData),
           });
-            
-
-          console.log('Data seved successfully.');
+    
+          if (response.ok) {
+            console.log('Data saved successfully!');
+            // 他の処理を実行（リダイレクトなど）
+          } else {
+            console.error('Error saving data.');
+          }
         } catch (error) {
           console.error('Error saving data:', error);
         }
       };
-    */  
     
     return (
             <div>
@@ -131,7 +112,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={() =>{handleSubmit} }className={styles.form}>
+                        <form onSubmit={handleSubmit} className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
