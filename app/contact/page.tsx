@@ -1,5 +1,5 @@
 import React, { ReducerAction, use, useState } from 'react';
-
+import { NextApiRequest, NextApiResponse } from 'next';
 
 import Image from 'next/image'
 import styles from './page.module.css'
@@ -77,8 +77,32 @@ const Footer = () => {
     {/*上記コンポーネントは、別途フォルダにまとめる。 */}
     {/*以下dbとの連携は適宜見やすいように調整*/}
 
-const Home = () => {
-    
+export default function ContactPage() {
+    /*
+    const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+        if (req.method === 'POST') {
+          try {
+            const { formData } = req.body; // フォームからのデータを取得
+      
+            // Prismaを介してデータベースに保存
+            const createdData = await prisma.contact.create({
+              data: {
+                name: formData.name,
+                email: formData.email,
+                inquiry: formData.inquiry,
+              },
+            });
+      
+            res.status(201).json({ message: 'Data saved successfully', data: createdData });
+          } catch (error) {
+            console.error('Error saving data:', error);
+            res.status(500).json({ message: 'Error saving data' });
+          }
+        } else {
+          res.status(302).json({ message: 'Method Not Allowed' });
+        }
+      }
+    */
     return (
         <div
         className={styles.Isometric}
@@ -100,5 +124,3 @@ const Home = () => {
         
     )
 }
-
-export default Home;

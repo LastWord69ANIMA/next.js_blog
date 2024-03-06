@@ -1,6 +1,6 @@
 "use client"
 import React, { ReducerAction, use, useState } from 'react';
-
+import { NextApiRequest, NextApiResponse } from 'next';
 
 import Image from 'next/image'
 import styles from './page.module.css'
@@ -8,8 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
-
-//import handler from '@/app/api/route';
+import handler from '@/app/api/route';
 
 const GoToGithub = () => {
     return (
@@ -84,26 +83,27 @@ const Contactform: React.FC = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
 
-      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-          // Prisma Clientを介してデータベースにデータを保存
-          const result = await fetch('../api/route',{
-            method:'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json',
-            },
+      const handleSubmit = async (req: NextApiRequest, res: NextApiResponse)  => {
+        if (req.method === 'POST') {
+          try {
+            const { formData } = req.body; // フォームからのデータを取得
+      
+            // Prismaを介してデータベースに保存
+            const createdData = await prisma.contact.create({
+              data: {
+                name: formData.name,
+                email: formData.email,
+                inquiry: formData.inquiry,
+              },
             });
-        
-            if (result.ok) {
-            const data = await result.json();
-            console.log('Data saved successfully:', data);
-          } else {
-            console.error('Error saving data');
+      
+            res.status(201).json({ message: 'Data saved successfully', data: createdData });
+          } catch (error) {
+            console.error('Error saving data:', error);
+            res.status(500).json({ message: 'Error saving data' });
           }
-        } catch (error) {
-          console.error('Error saving data:', error);
+        } else {
+          res.status(302).json({ message: 'Method Not Allowed' });
         }
       };
     /*
@@ -131,7 +131,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} className={styles.form}>
+                        <form onSubmit={() =>{handleSubmit} }className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
