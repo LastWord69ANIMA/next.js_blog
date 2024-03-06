@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
+import handler from '@/app/api/contact';
 //import handler from '@/app/api/route';
 
 const GoToGithub = () => {
@@ -87,7 +88,7 @@ const Contactform: React.FC = () => {
         e.preventDefault();
         try {
           // Prisma Clientを介してデータベースにデータを保存
-          const result = await fetch('@/app/api/route',{
+          const result = await fetch('../api/route',{
             method:'POST',
             body: JSON.stringify(formData),
             headers: {
