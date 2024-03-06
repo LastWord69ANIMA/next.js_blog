@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
-//import handler from '@/app/api/route';
+import handler from '@/app/api/route';
 
 const GoToGithub = () => {
     return (
@@ -141,7 +141,7 @@ const Contactform: React.FC = () => {
                                     name="name"
                                     placeholder="Enter your name"
                                     value={formData.name}
-                                    onChange={handleChange}
+                                    onChange={(e) => setFormData({...formData, name: e.target.value})}
                                 />
                             </div>
                             <div>
@@ -154,7 +154,7 @@ const Contactform: React.FC = () => {
                                     name="email"
                                     placeholder="Enter your email"
                                     value={formData.email}
-                                    onChange={handleChange}
+                                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                                 />
                             </div>
                             <div>
@@ -166,7 +166,7 @@ const Contactform: React.FC = () => {
                                     name="inquiry"
                                     placeholder="Enter your inquiry"
                                     value={formData.inquiry}
-                                    onChange={handleChange}
+                                    onChange={(e) => setFormData({...formData, inquiry: e.target.value})}
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
