@@ -46,7 +46,7 @@ layout.txt
 *.d.ts
 probiders.tsx
 
-api/
+
 .gitignore
 pb_migrations
 pb_data
