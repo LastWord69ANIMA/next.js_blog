@@ -33,7 +33,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/post', {
+          const response = await fetch('/home/lastword69anima/next.js_blog/next.js_blog/app/api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
