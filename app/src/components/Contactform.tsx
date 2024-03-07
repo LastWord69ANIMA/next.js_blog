@@ -11,11 +11,11 @@ import prisma from '../../../lib/prisma';
 
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
-        
+        id: '',
         name: '',
         email: '',
         inquiry: '',
-        
+        createdAt: '',
       })
 
       const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
