@@ -48,7 +48,7 @@ probiders.tsx
 contact.ts
 contact.txt
 
-/api/auth/
+*auth*
 route.ts
 .gitignore
 pb_migrations
