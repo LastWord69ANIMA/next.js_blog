@@ -26,15 +26,13 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('POSTGRES_PRISMA_URL', {
+          const response = await fetch('/api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
           });
-
-          await response.json()
     
           if (response.ok) {
             console.log('Data saved successfully!');
