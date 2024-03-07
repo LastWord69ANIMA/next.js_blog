@@ -7,7 +7,7 @@ import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
-import handler from '@/app/api/post/route';
+
 
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
