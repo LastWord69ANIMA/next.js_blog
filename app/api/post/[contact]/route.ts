@@ -1,5 +1,5 @@
-//app/api/post/route.ts
-import prisma from '../../../lib/prisma';
+//app/api/post/[contact]/route.ts
+import prisma from '../../../../lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from "next/server";
 
@@ -8,14 +8,20 @@ export default async function handler(
   ) {
   if (req.method === 'POST') {
     try {
-        const { name, email, inquiry } = req.body; // フォームからのデータを取得
+        const { formData } = req.body; // フォームからのデータを取得
+
+        type formData = {
+          name: string,
+          email: string,
+          inquiry: string
+        }
 
         // Prismaを介してデータベースに保存
         await prisma.contact.create({
           data: {
-            name,
-            email,
-            inquiry,
+            name: formData.name,
+            email: formData.email,
+            inquiry: formData.inquiry
           },
         });
 

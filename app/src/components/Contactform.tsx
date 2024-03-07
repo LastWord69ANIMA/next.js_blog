@@ -21,12 +21,12 @@ const Contactform: React.FC = () => {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
       };
 
-      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/contact', {
+          const response = await fetch('/api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
