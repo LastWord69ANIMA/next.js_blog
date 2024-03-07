@@ -28,12 +28,12 @@ const Contactform: React.FC = () => {
         setFormData(e.target.value)
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.BaseSyntheticEvent) => {
         e.preventDefault();
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/home/lastword69anima/next.js_blog/next.js_blog/app/api/post', {
+          const response = await fetch('/api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -41,8 +41,8 @@ const Contactform: React.FC = () => {
             body: JSON.stringify(formData),
           });
 
-          const data = await response.json()
-          setPostedData(data.body)
+          await response.json()
+          
     
           if (response.ok) {
             console.log('Data saved successfully!');
@@ -111,7 +111,7 @@ const Contactform: React.FC = () => {
                         </form>
                     </Flex >
 
-                    <p>APIから受け取った値{postedData.name||"様、入力ありがとうございました。"}</p>
+                    
 
                 </div>
 
