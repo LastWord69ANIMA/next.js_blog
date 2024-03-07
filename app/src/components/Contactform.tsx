@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
+import { getSystemErrorName } from 'util';
 
 //import handler from '@/app/api/route';
 
@@ -78,19 +79,32 @@ const Contactform: React.FC = () => {
         name: '',
         email: '',
         inquiry: '',
-      });
+      })
+    const [postedData, setPostedData] = useState({
+        name: '',
+        email: '',
+        inquiry: '',
+    })
 
-      const handleSubmit = async (e) => {
+    const onChangeHandler = (e) => {
+        setFormData(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('../../api/route', {
+          const response = await fetch('/api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
           });
+
+          const data = await response.json()
+          setPostedData(data.body)
     
           if (response.ok) {
             console.log('Data saved successfully!');
@@ -112,7 +126,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} className={styles.form}>
+                        <form onSubmit={handleSubmit} action='action=`/api/form' method='POST' className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
@@ -123,7 +137,7 @@ const Contactform: React.FC = () => {
                                     name="name"
                                     placeholder="Enter your name"
                                     value={formData.name}
-                                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                    onChange={onChangeHandler}
                                 />
                             </div>
                             <div>
@@ -136,7 +150,7 @@ const Contactform: React.FC = () => {
                                     name="email"
                                     placeholder="Enter your email"
                                     value={formData.email}
-                                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                    onChange={onChangeHandler}
                                 />
                             </div>
                             <div>
@@ -148,7 +162,7 @@ const Contactform: React.FC = () => {
                                     name="inquiry"
                                     placeholder="Enter your inquiry"
                                     value={formData.inquiry}
-                                    onChange={(e) => setFormData({...formData, inquiry: e.target.value})}
+                                    onChange={onChangeHandler}
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
@@ -158,6 +172,9 @@ const Contactform: React.FC = () => {
                             </Flex>
                         </form>
                     </Flex >
+
+                    <p>APIから受け取った値{postedData.name||"様、入力ありがとうございました。"}</p>
+
                 </div>
 
                 
