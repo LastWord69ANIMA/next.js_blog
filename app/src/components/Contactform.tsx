@@ -2,27 +2,23 @@
 import React, { ReducerAction, use, useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import Image from 'next/image'
+
 import styles from './page.module.css'
-import Link from 'next/link';
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
-import { getSystemErrorName } from 'util';
+
 
 //import handler from '@/app/api/route';
 
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
+        id : '',
         name: '',
         email: '',
         inquiry: '',
+        createdAt: ''
       })
-    const [postedData, setPostedData] = useState({
-        name: '',
-        email: '',
-        inquiry: '',
-    })
 
     const onChangeHandler = (e) => {
         setFormData(e.target.value)
@@ -42,6 +38,8 @@ const Contactform: React.FC = () => {
           });
 
           await response.json()
+
+          await prisma.$disconnect()
           
     
           if (response.ok) {
