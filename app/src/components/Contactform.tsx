@@ -7,24 +7,23 @@ import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
 
 import prisma from '../../../lib/prisma';
-
-
-//import handler from '@/app/api/route';
+import handler from '@/app/api/post/route';
 
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
-        id : '',
+        
         name: '',
         email: '',
         inquiry: '',
-        createdAt: ''
+        
       })
 
-    const onChangeHandler = (e) => {
-        setFormData(e.target.value)
-    }
+      const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+      };
 
-    const handleSubmit = async (e: React.BaseSyntheticEvent) => {
+      const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
@@ -38,9 +37,6 @@ const Contactform: React.FC = () => {
           });
 
           await response.json()
-
-          await prisma.$disconnect()
-          
     
           if (response.ok) {
             console.log('Data saved successfully!');
@@ -62,7 +58,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} action='action=`/api/form' method='POST' className={styles.form}>
+                        <form onSubmit={handleSubmit} action='/api/form' method='POST' className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
