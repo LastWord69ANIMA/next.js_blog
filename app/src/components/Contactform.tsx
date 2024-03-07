@@ -3,7 +3,7 @@ import React, { ReducerAction, use, useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { Pool } from 'pg'
-import { PrismaPg } from '@prisma/adapter-pg'
+//import { PrismaPg } from '@prisma/adapter-pg'
 
 import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
@@ -23,7 +23,7 @@ const Contactform: React.FC = () => {
     const connectionString = `${process.env.DATABASE_URL}`
 
     const pool = new Pool({ connectionString })
-    const adapter = new PrismaPg(pool)
+    //const adapter = new PrismaPg(pool)
 
       const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
