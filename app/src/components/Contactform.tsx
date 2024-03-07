@@ -14,7 +14,7 @@ const Contactform: React.FC = () => {
         inquiry: '',
         
       })
-
+ 
 
       const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
