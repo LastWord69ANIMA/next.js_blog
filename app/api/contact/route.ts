@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 export default async function handler(
   req: NextApiRequest, res: NextApiResponse
   ) {
-  
+  if (req.method === 'POST') {
     try {
         const { name, email, inquiry } = req.body; // フォームからのデータを取得
 
@@ -25,7 +25,7 @@ export default async function handler(
         res.status(500).json({ message: 'Error saving data' });
       }
   }
-
+}
 
 
 
