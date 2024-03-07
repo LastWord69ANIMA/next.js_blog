@@ -2,6 +2,8 @@
 import React, { ReducerAction, use, useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import { Pool } from 'pg'
+import { PrismaPg } from '@prisma/adapter-pg'
 
 import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
@@ -11,12 +13,17 @@ import prisma from '../../../lib/prisma';
 
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
-        id: '',
+        
         name: '',
         email: '',
         inquiry: '',
-        createdAt: '',
+        
       })
+
+    const connectionString = `${process.env.DATABASE_URL}`
+
+    const pool = new Pool({ connectionString })
+    const adapter = new PrismaPg(pool)
 
       const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -28,7 +35,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/post', {
+          const response = await fetch('POSTGRES_PRISMA_URL', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
