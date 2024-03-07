@@ -10,22 +10,15 @@ export default async function handler(
     try {
         const { formData } = req.body; // フォームからのデータを取得
 
-        type formData = {
-          name: string,
-          email: string,
-          inquiry: string
-        }
-
         // Prismaを介してデータベースに保存
-        await prisma.contact.create({
+        const contact = await prisma.contact.create({
           data: {
             name: formData.name,
             email: formData.email,
             inquiry: formData.inquiry
           },
         });
-
-        res.status(201).json({ message: 'Data saved successfully'});
+        return res.json(contact);
     } catch (error) {
         console.error('Error saving data:', error);
         res.status(500).json({ message: 'Error saving data' });
