@@ -46,7 +46,7 @@ layout.txt
 *.d.ts
 probiders.tsx
 contact.ts
-
+contact.txt
 
 route.ts
 .gitignore
