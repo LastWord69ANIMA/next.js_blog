@@ -1,13 +1,9 @@
-"use client"
+
 import React, { ReducerAction, use, useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-
-
 import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
-
-import prisma from '../../../lib/prisma';
 
 
 const Contactform: React.FC = () => {
