@@ -1,3 +1,4 @@
+"use server"
 import React, { useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -25,7 +26,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('ep-morning-field-a4dtl8ps-pooler.us-east-1.aws.neon.tech', {
+          const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
