@@ -1,9 +1,6 @@
 "use server";
 
 export async function postAction(formData: FormData) {
-  const name = formData;
-
-
     try {
     // フォームデータをサーバーに送信
     const response = await fetch('/api/post/[contact]/', {
