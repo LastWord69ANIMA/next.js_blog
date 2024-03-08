@@ -12,7 +12,7 @@ import prisma from '../../lib/prisma';
 
 //const prisma = new PrismaClient()
 
-import Contactform from '../src/components/Contactform';
+import Contactform from './Contactform';
 const GoToGithub = () => {
     return (
       <Link href="https://github.com/LastWord69ANIMA"
