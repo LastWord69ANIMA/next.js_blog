@@ -25,7 +25,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/contact', {
+          const response = await fetch('ep-morning-field-a4dtl8ps-pooler.us-east-1.aws.neon.tech', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
