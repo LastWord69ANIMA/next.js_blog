@@ -79,7 +79,7 @@ const Footer = () => {
     {/*以下dbとの連携は適宜見やすいように調整*/}
 
 export default function ContactPage() {
-    "use server"
+    
     return (
         <div
         className={styles.Isometric}
