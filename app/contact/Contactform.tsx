@@ -25,7 +25,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/contact/route', {
+          const response = await fetch('/../api/contact/route', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const Contactform: React.FC = () => {
           console.error('Error saving data:', error);
         }
       };
-    
+
     return (
             <div>
                 
