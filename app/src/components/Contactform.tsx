@@ -55,7 +55,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} action='/api/post/[contact]' method='POST' className={styles.form}>
+                        <form onSubmit={handleSubmit} action='/api/post/[contact]' method='post'  className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
@@ -95,7 +95,7 @@ const Contactform: React.FC = () => {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <button type="submit" formMethod='post'>
+                                <button type="submit">
                                 submit
                                 </button>
                             </Flex>
