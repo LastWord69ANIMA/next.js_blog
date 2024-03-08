@@ -6,6 +6,7 @@ import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
 
 
+
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
         
@@ -26,7 +27,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/post/[contact]', {
+          const response = await fetch('@/app/api/post/[contact]/route', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
