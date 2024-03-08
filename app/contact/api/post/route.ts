@@ -1,13 +1,6 @@
 //app/contact/api/post/route.ts
 import prisma from '@/lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { NextRequest, NextResponse } from "next/server";
-
-export const config = {
-  api:{
-    bodyParser: false
-  }
-}
 
 
 export default async function POST(
