@@ -55,7 +55,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} action='/api/form' method='POST' className={styles.form}>
+                        <form onSubmit={handleSubmit} action='/api/post/[contact]' method='POST' className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
