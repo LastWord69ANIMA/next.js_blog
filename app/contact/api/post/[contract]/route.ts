@@ -1,15 +1,17 @@
 //app/contact/api/post/route.ts
 import prisma from '@/lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { stringify } from 'querystring';
 
 export default async function POST(
   req: NextApiRequest, res: NextApiResponse
   ) {
   
+    
     try {
+
         const { formData } = req.body; // フォームからのデータを取得
 
-        
         // Prismaを介してデータベースに保存
         const contact = await prisma.contact.create({
           data: {
