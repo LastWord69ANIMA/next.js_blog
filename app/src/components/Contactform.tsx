@@ -1,4 +1,4 @@
-
+"use client"
 import React, { ReducerAction, use, useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -7,7 +7,7 @@ import { Flex } from "@chakra-ui/react";
 
 
 export default function Contactform() {
-    "use server"
+    
         const [formData, setFormData] = useState({
             
             name: '',
