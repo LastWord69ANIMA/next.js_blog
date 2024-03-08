@@ -25,7 +25,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('/api/post', {
+          const response = await fetch('./api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',},
@@ -52,7 +52,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} action='/api/contact' method='POST' className={styles.form}>
+                        <form onSubmit={handleSubmit} action='./api/post' method='POST' className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
