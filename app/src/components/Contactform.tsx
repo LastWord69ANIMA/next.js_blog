@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
-
+import { postAction } from '@/app/postAction';
 
 export default function Contactform() {
     
@@ -56,7 +56,7 @@ export default function Contactform() {
                         </Flex>
                         
                         <Flex className={styles.home}>
-                            <form onSubmit={handleSubmit} action='/api/post/[contact]/' method='post'  className={styles.form}>
+                            <form onSubmit={handleSubmit} action={postAction} method='post'  className={styles.form}>
                                 <div>
                                     <Flex>
                                     <label htmlFor="name">Name</label>
