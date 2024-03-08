@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 export default async function POST(
   req: NextApiRequest, res: NextApiResponse
   ) {
-  if (req.method === 'POST') {
+  
     try {
         const { formData } = req.body; // フォームからのデータを取得
 
@@ -24,7 +24,7 @@ export default async function POST(
         res.status(500).json({ message: 'Error saving data' });
       }
   }
-}
+
 
 
 
