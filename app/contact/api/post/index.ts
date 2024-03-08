@@ -2,7 +2,7 @@
 import prisma from '@/lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from 'next-auth/react';
+
 
 export default async function POST(
   req: NextApiRequest, res: NextApiResponse
@@ -11,7 +11,7 @@ export default async function POST(
     try {
         const { formData } = req.body; // フォームからのデータを取得
 
-        const session = await getSession({ req });
+        
         // Prismaを介してデータベースに保存
         const contact = await prisma.contact.create({
           data: {
