@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { stringify } from 'querystring';
 
 export default async function POST(
-  req: NextApiRequest, res: NextApiResponse
+  req: NextApiRequest
   ) {
   
     
@@ -20,10 +20,10 @@ export default async function POST(
             inquiry: formData.inquiry
           },
         });
-        return res.json(contact);
+        
     } catch (error) {
         console.error('Error saving data:', error);
-        res.status(500).json({ message: 'Error saving data' });
+        
       }
   }
 
