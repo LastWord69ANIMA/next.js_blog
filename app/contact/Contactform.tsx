@@ -25,7 +25,7 @@ const Contactform: React.FC = () => {
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('pages/api/contact', {
+          const response = await fetch('pages/api/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',},
