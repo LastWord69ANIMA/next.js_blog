@@ -104,6 +104,43 @@ export default function ContactPage() {
         }
       }
     */
+      const Contactform: React.FC = () => {
+        const [formData, setFormData] = useState({
+            
+            name: '',
+            email: '',
+            inquiry: '',
+            
+          })
+     
+    
+          const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            const { name, value } = e.target;
+            setFormData((prevData) => ({ ...prevData, [name]: value }));
+          };
+    
+          const handleSubmit = async (e: React.SyntheticEvent) => {
+            e.preventDefault();
+    
+            try {
+              // フォームデータをサーバーに送信
+              const response = await fetch('pages/api/post', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',},
+                body: JSON.stringify(formData),
+              });
+        
+              if (response.ok) {
+                console.log('Data saved successfully!');
+                // 他の処理を実行（リダイレクトなど）
+              } else {
+                console.error('Error saving data.');
+              }
+            } catch (error) {
+              console.error('Error saving data:', error);
+            }
+          };
     return (
         <div
         className={styles.Isometric}
@@ -124,4 +161,4 @@ export default function ContactPage() {
         </div>
         
     )
-}
+}}
