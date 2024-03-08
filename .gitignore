@@ -49,7 +49,7 @@ contact.ts
 contact.txt
 
 *auth*
-
+route.ts
 .gitignore
 pb_migrations
 pb_data
