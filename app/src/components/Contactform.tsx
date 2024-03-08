@@ -32,7 +32,7 @@ const Contactform: React.FC = () => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(Object.fromEntries(formData)),
+            body: JSON.stringify(formData),
           });
     
           if (response.ok) {
@@ -55,7 +55,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit} action='/api/post/[contact]' method='post'  className={styles.form}>
+                        <form onSubmit={handleSubmit} action='/api/post/[contact]/' method='post'  className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
