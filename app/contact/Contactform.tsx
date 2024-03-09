@@ -96,15 +96,8 @@ const Contactform: React.FC = () => {
                             </Flex>
                         </form>
                     </Flex >
-
                     
-
                 </div>
-
-                
-
-
-
             </div>
     )
 }
