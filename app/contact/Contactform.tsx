@@ -1,9 +1,7 @@
+"use client"
 import React, { useState } from 'react';
-import { NextApiRequest, NextApiResponse } from 'next';
-
 import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
-
 
 const Contactform: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -20,12 +18,12 @@ const Contactform: React.FC = () => {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
       };
 
-      const handleSubmit = async (e: React.SyntheticEvent) => {
+      const onhandleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
 
         try {
           // フォームデータをサーバーに送信
-          const response = await fetch('pages/api/post', {
+          const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',},
@@ -52,7 +50,7 @@ const Contactform: React.FC = () => {
                     </Flex>
                     
                     <Flex className={styles.home}>
-                        <form onSubmit={handleSubmit}  method='POST' className={styles.form}>
+                        <form onSubmit={onhandleSubmit}  method='POST' action="/api/contact" className={styles.form}>
                             <div>
                                 <Flex>
                                 <label htmlFor="name">Name</label>
