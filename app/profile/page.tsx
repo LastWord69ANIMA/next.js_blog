@@ -4,83 +4,76 @@ import styles from './page.module.css'
 import Link from 'next/link';
 import { Button, Flex, Heading, Input, position, useColorMode, useColorModeValue} from "@chakra-ui/react";
 
+const GoToGithub = () => {
+    return (
+      <Link href="https://github.com/LastWord69ANIMA"
+      >
+        <Image
+            src={"/github-icon.svg"}
+            alt={"Picture of Github"}
+            width={50}
+            height={50}
+        ></Image>
+      </Link>
+    )
+}
 
+const Header  = () => {
+    return(
+        <header className={styles.header}>
+        <Link
+            href="/"
+            
+        >
+            <h1>
+                家
+            </h1>
+        </Link>
+
+        <Link
+            href="https://micro-cms-tutorial-seven.vercel.app/"
+        >
+            <h1>
+                事
+            </h1>
+        </Link>
+
+        <Link
+            href="/profile"
+        >
+            <h1>
+                自
+            </h1>
+        </Link>
+
+        <Link 
+            href="/contact"
+        >
+            <h1>
+                問
+            </h1>
+        </Link>
+    </header>
+    )
+}
+
+const Footer = () => {
+    return(
+        <footer className={styles.footer}>
+        <GoToGithub />
+        <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
+    </footer>
+    )
+}
 
 export default function Profile() {
-
-    const GoToGithub = () => {
-        return (
-          <Link href="https://github.com/LastWord69ANIMA"
-          >
-            <Image
-                src={"/github-icon.svg"}
-                alt={"Picture of Github"}
-                width={50}
-                height={50}
-            ></Image>
-          </Link>
-        )
-    }
-
-    const Header  = () => {
-        return(
-            <header className={styles.header}>
-            <Link
-                href="/"
-                
-            >
-                <h1>
-                    家
-                </h1>
-            </Link>
-
-            <Link
-                href="https://micro-cms-tutorial-seven.vercel.app/"
-            >
-                <h1>
-                    事
-                </h1>
-            </Link>
-
-            <Link
-                href="/profile"
-            >
-                <h1>
-                    自
-                </h1>
-            </Link>
-
-            <Link 
-                href="/contact"
-            >
-                <h1>
-                    問
-                </h1>
-            </Link>
-        </header>
-        )
-    }
-
-    const Footer = () => {
-        return(
-            <footer className={styles.footer}>
-            <GoToGithub />
-            <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
-        </footer>
-        )
-    }
-
-    {/*
-    上記関数は、次回の作業時にまとめてコンポーネント用ディレクトリへ置いておきます。
-    */}
-    
     return(
         <div
         className={styles.Isometric}
         >       
                 <Header />
             
-            <div> {/*クラス指定して要素を空けたり、動的にしたり */}
+            <div>
                 
                 <Flex className={styles.home}>
                 --プロフィール--
