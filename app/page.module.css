@@ -148,7 +148,19 @@
   padding: 10px;
 }
 
+.form{
+  width: 300px;
+}
 
+.prehome{
+  height:30vh;
+  font-size: 8vh;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  align-items: center;
+  font-family: headerfont;
+}
 
 @font-face  {
   font-family: "headerfont";

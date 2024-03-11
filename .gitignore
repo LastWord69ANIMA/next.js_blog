@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env*
 
 # vercel
 .vercel
@@ -36,7 +37,19 @@ yarn-error.log*
 next-env.d.ts
 
 .vscode
+ホーム見本.txt
+継承前ホーム.txt
+layout.txt
+*.lock
+/(login)/
+/(notes)/
+*.d.ts
+probiders.tsx
+contact.ts
+contact.txt
 
+*auth*
 
+.gitignore
 pb_migrations
 pb_data
