@@ -79,10 +79,16 @@ export default function Home() {
 
     <div>
         <Flex className={styles.home}>
-            ポ＾トフォリオ
+            ポートフォリオ
         </Flex>
     </div>
-    
+    <Flex>
+        <div>
+        <h1 className={styles.prehome}>訪問者様へ</h1>
+        <p className={styles.prehome}>「事」内の記事はタグでの絞り込みをご活用ください</p>
+        </div>
+    </Flex>
+
         <Footer />
 
 </div>

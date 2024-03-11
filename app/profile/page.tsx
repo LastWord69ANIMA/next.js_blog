@@ -89,11 +89,12 @@ export default function Profile() {
                 </Flex>
                 <Flex className={styles.home}>
                 1.Programing
-
+                </Flex>
+                <Flex className={styles.home}>
                 2.Philosophy 
-
+                </Flex>
+                <Flex className={styles.home}>
                 3.Work out 
-                
                 etc...
                 </Flex>
 
