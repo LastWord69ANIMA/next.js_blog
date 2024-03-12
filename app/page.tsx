@@ -79,7 +79,7 @@ export default function Home() {
 
     <div>
         <Flex className={styles.home}>
-            ポートフォリオ
+            ポートフォリオ v2.0
         </Flex>
     </div>
     <Flex>

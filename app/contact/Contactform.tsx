@@ -1,14 +1,16 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './page.module.css'
 import { Flex } from "@chakra-ui/react";
+import { useRouter } from 'next/navigation';
+
 
 const Contactform: React.FC = () => {
-    const [formData, setFormData] = useState({
-        
-        name: '',
-        email: '',
-        inquiry: '',
+  const router = useRouter();
+    const [formData, setFormData] = useState({    
+      name: '',
+      email: '',
+      inquiry: '',
         
       })
  
@@ -20,6 +22,7 @@ const Contactform: React.FC = () => {
 
       const onhandleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
+        alert('投稿ありがとうございました！\n現在手動での確認ですが、以降様々な改良を施す予定です！');
 
         try {
           // フォームデータをサーバーに送信
@@ -90,7 +93,7 @@ const Contactform: React.FC = () => {
                                 ></textarea>
                             </div>
                             <Flex className={styles.prehome}>
-                                <button type="submit">
+                                <button type="submit" onClick={() => router.push('/')}>
                                 submit
                                 </button>
                             </Flex>
