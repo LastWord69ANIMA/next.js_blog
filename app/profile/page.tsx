@@ -2,70 +2,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link';
-import { Button, Flex, Heading, Input, position, useColorMode, useColorModeValue} from "@chakra-ui/react";
+import { Flex} from "@chakra-ui/react";
 
-const GoToGithub = () => {
-    return (
-      <Link href="https://github.com/LastWord69ANIMA"
-      >
-        <Image
-            src={"/github-icon.svg"}
-            alt={"Picture of Github"}
-            width={50}
-            height={50}
-        ></Image>
-      </Link>
-    )
-}
+import Header from "@/app/src/components/Header"
+import Footer from '@/app/src/components/Footer';
 
-const Header  = () => {
-    return(
-        <header className={styles.header}>
-        <Link
-            href="/"
-            
-        >
-            <h1>
-                家
-            </h1>
-        </Link>
-
-        <Link
-            href="https://micro-cms-tutorial-seven.vercel.app/"
-        >
-            <h1>
-                事
-            </h1>
-        </Link>
-
-        <Link
-            href="/profile"
-        >
-            <h1>
-                自
-            </h1>
-        </Link>
-
-        <Link 
-            href="/contact"
-        >
-            <h1>
-                問
-            </h1>
-        </Link>
-    </header>
-    )
-}
-
-const Footer = () => {
-    return(
-        <footer className={styles.footer}>
-        <GoToGithub />
-        <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
-    </footer>
-    )
-}
-
+{/*　次回、コンポーネントにして、読みやすくする予定　*/}
 export default function Profile() {
     return(
         <div
@@ -91,10 +33,10 @@ export default function Profile() {
                 1.Programing
                 </Flex>
                 <Flex className={styles.home}>
-                2.Philosophy 
+                2.Reading
                 </Flex>
                 <Flex className={styles.home}>
-                3.Work out 
+                3.Work out
                 etc...
                 </Flex>
 
@@ -170,7 +112,7 @@ export default function Profile() {
                     >
                         <Image
                             src={"/react.svg"}
-                            alt={"Picture of Next.js"}
+                            alt={"Picture of react"}
                             width={100}
                             height={100}
                         ></Image>
@@ -215,6 +157,17 @@ export default function Profile() {
                             height={100}
                         ></Image>
                     </Link>
+
+                    <Link href="https://www.prisma.io/"
+                        className={styles.logohidden}
+                    >
+                        <Image
+                            src={"/prisma.svg"}
+                            alt={"Picture of prisma"}
+                            width={100}
+                            height={100}
+                        ></Image>
+                    </Link>
                 </div>
 
                 <Flex className={styles.home}>
@@ -222,12 +175,23 @@ export default function Profile() {
                 </Flex>
 
                 <div className={styles.hidden}>
-                    <Link href="https://nodejs.org/ja/docs"
+                <Link href="https://kotlinlang.org/"
                         className={styles.logohidden}
                     >
                         <Image
-                            src={"/nodejs.svg"}
-                            alt={"Picture of Node.js"}
+                            src={"/kotlin.svg"}
+                            alt={"Picture of kotlin"}
+                            width={100}
+                            height={100}
+                        ></Image>
+                    </Link>
+
+                    <Link href="https://developer.android.com/studio?hl=ja"
+                        className={styles.logohidden}
+                    >
+                        <Image
+                            src={"/android-studio.svg"}
+                            alt={"Picture of android studio"}
                             width={100}
                             height={100}
                         ></Image>
@@ -244,23 +208,12 @@ export default function Profile() {
                         ></Image>
                     </Link>
 
-                    <Link href="https://www.oracle.com/jp/java/"
-                        className={styles.logohidden}
-                    >
-                        <Image
-                            src={"/java.svg"}
-                            alt={"Picture of java"}
-                            width={100}
-                            height={100}
-                        ></Image>
-                    </Link>
-
                     <Link href="https://www.tensorflow.org/api_docs"
                         className={styles.logohidden}
                     >
                         <Image
                             src={"/tensorflow.svg"}
-                            alt={"Picture of java"}
+                            alt={"Picture of tensorflow"}
                             width={100}
                             height={100}
                         ></Image>
