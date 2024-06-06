@@ -14,7 +14,8 @@ const Header  = () => {
         </Link>
 
         <Link
-            href="https://micro-cms-tutorial-seven.vercel.app/"
+            href={"https://micro-cms-tutorial-seven.vercel.app/"}
+            target={"_blank"}
         >
             <h1>
                 事

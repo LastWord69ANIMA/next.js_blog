@@ -7,7 +7,7 @@ import { Flex} from "@chakra-ui/react";
 import Header from "@/app/src/components/Header"
 import Footer from '@/app/src/components/Footer';
 
-{/*　次回、コンポーネントにして、読みやすくする予定　*/}
+{/*　次回、コンポーネントにして、読みやすく且つサイズの調整・CSSの有効活用　*/}
 export default function Profile() {
     return(
         <div
@@ -45,18 +45,7 @@ export default function Profile() {
                 </Flex>
 
                 <div className={styles.hidden}>
-                    <Link href="https://developer.mozilla.org/ja/docs/Web/JavaScript"
-                        className={styles.logohidden}
-                    >
-                        <Image
-                            src={"/javascript.svg"}
-                            alt={"Picture of JavaScript"}
-                            width={100}
-                            height={100}
-                            ></Image>
-                    </Link>
-
-                    <Link href="https://www.typescriptlang.org/docs/"
+                    <Link href="https://github.com/LastWord69ANIMA/next.js_blog"
                         className={styles.logohidden}
                     >
                         <Image
@@ -67,7 +56,7 @@ export default function Profile() {
                         ></Image>
                     </Link>
 
-                    <Link href="https://www.php.net/manual/ja/index.php"
+                    <Link href="https://github.com/LastWord69ANIMA/Git-command-tutorial"
                         className={styles.logohidden}
                     >
                         <Image
@@ -78,7 +67,7 @@ export default function Profile() {
                         ></Image>
                     </Link>
 
-                    <Link href="https://docs.python.org/ja/3/"
+                    <Link href="https://github.com/LastWord69ANIMA/Twiiter_api"
                         className={styles.logohidden}
                     >
                         <Image
@@ -96,7 +85,7 @@ export default function Profile() {
                 </Flex>
 
                 <div className={styles.hidden}>
-                    <Link href="https://nextjs.org/docs"
+                    <Link href="https://github.com/LastWord69ANIMA/next.js_blog"
                         className={styles.logohidden}
                     >
                         <Image
@@ -107,7 +96,7 @@ export default function Profile() {
                         ></Image>
                     </Link>
 
-                    <Link href="https://react.dev/learn"
+                    <Link href="https://github.com/LastWord69ANIMA/next.js_blog"
                         className={styles.logohidden}
                     >
                         <Image
@@ -124,8 +113,7 @@ export default function Profile() {
                 </Flex>
 
                 <div className={styles.hidden}>
-                        
-                    <Link href="https://docs.docker.jp/"
+                    <Link href="https://github.com/LastWord69ANIMA/php-docker"
                         className={styles.logohidden}
                     >
                         <Image
@@ -136,7 +124,7 @@ export default function Profile() {
                         ></Image>
                     </Link>
 
-                    <Link href="https://vercel.com/docs"
+                    <Link href="https://github.com/LastWord69ANIMA/next.js_blog"
                         className={styles.logohidden}
                     >
                         <Image
@@ -147,23 +135,12 @@ export default function Profile() {
                         ></Image>
                     </Link>
 
-                    <Link href="https://www.mysql.com/jp/"
+                    <Link href="https://github.com/LastWord69ANIMA/Git-command-tutorial"
                         className={styles.logohidden}
                     >
                         <Image
                             src={"/mysql.svg"}
                             alt={"Picture of Mysql"}
-                            width={100}
-                            height={100}
-                        ></Image>
-                    </Link>
-
-                    <Link href="https://www.prisma.io/"
-                        className={styles.logohidden}
-                    >
-                        <Image
-                            src={"/prisma.svg"}
-                            alt={"Picture of prisma"}
                             width={100}
                             height={100}
                         ></Image>
@@ -203,17 +180,6 @@ export default function Profile() {
                         <Image
                             src={"/c.svg"}
                             alt={"Picture of C言語"}
-                            width={100}
-                            height={100}
-                        ></Image>
-                    </Link>
-
-                    <Link href="https://www.tensorflow.org/api_docs"
-                        className={styles.logohidden}
-                    >
-                        <Image
-                            src={"/tensorflow.svg"}
-                            alt={"Picture of tensorflow"}
                             width={100}
                             height={100}
                         ></Image>
