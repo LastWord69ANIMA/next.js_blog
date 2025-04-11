@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import { Flex, LinkOverlay } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Header from "@/app/src/components/Header"
 import Footer from '@/app/src/components/Footer';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ export default function Home() {
 
     <div>
         <Flex className={styles.home}>
-            ポートフォリオ v2.1
+            ポートフォリオ v2.2
         </Flex>
     </div>
 
