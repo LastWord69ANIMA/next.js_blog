@@ -154,6 +154,16 @@
   font-family: headerfont;
 }
 
+.prehome{
+  height:30vh;
+  font-size: 8vh;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  align-items: center;
+  font-family: headerfont;
+}
+
 .hiddencontents{
   display: grid;
   place-items: center;
