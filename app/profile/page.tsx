@@ -1,16 +1,16 @@
 'use client'
-import Image from 'next/image'
 import styles from './page.module.css'
-import Link from 'next/link';
 import { Flex} from "@chakra-ui/react";
 
 import Header from "@/app/src/components/Header"
 import Footer from '@/app/src/components/Footer';
 
-{/*次回、
-    ・項目のコンポーネント化
-    ・サイズの調整
-    ・職歴と資格欄を、箱内にて箇条書き
+{/*次回のver.でやること･･･の順序
+    1.UIをモバイルに対応させる
+    2.項目のコンポーネント化
+    3.職歴と資格欄を、箱内にて箇条書き
+    4.新しいanalyticsの使い方確認
+    5.隠し要素（遊び要素）の追加
 */}
 export default function Profile() {
     return(
@@ -58,7 +58,7 @@ export default function Profile() {
                     </Flex>
 
                     <Flex>
-                        2024/10 LPIC-1
+                        2024/8 LPIC-1
                     </Flex>
 
                     <Flex>

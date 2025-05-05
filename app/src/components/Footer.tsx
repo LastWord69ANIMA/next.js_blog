@@ -6,7 +6,7 @@ const Footer = () => {
     return(
         <footer className={styles.footer}>
         <GoToGithub />
-        <p>Copyright ©Lastword69ANIMA ※著作権はありませんが、一応ここに記録。</p>
+        <p>Copyright ©Lastword69ANIMA</p>
     </footer>
     )
 }
