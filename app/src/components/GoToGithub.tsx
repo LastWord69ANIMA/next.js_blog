@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const GoToGithub = () => {
     return (
-      <Link href={"https://github.com/LastWord69ANIMA"}
+      <Link href={"https://github.com/LastWord69ANIMA/next.js_blog/tree/main"}
       target={"_blank"}
       >
         <Image

@@ -7,8 +7,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@prisma/adapter-pg": "^5.10.2",
-    "@prisma/client": "^6.6.0",
-    "@types/node": "20.6.3",
+    "@prisma/client": "^6.8.2",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.2.2",
@@ -18,19 +17,21 @@
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.2",
     "framer-motion": "^10.16.4",
-    "next": "^14.1.0",
+    "next": "^15.3.3",
     "node-fetch": "^3.3.2",
     "pg": "^8.11.3",
     "pg-connection-string": "^2.6.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.2.2"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
-    "prisma": "^6.6.0",
+    "@types/node": "^20.17.57",
+    "prisma": "^6.8.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.3"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "scripts": {
     "dev": "next dev",

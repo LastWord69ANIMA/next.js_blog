@@ -7,13 +7,12 @@ import { useRouter } from 'next/navigation';
 
 const Contactform: React.FC = () => {
   const router = useRouter();
-    const [formData, setFormData] = useState({    
+    const [formData, setFormData] = useState({
       name: '',
       email: '',
       inquiry: '',
-        
       })
- 
+
 
       const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -22,7 +21,7 @@ const Contactform: React.FC = () => {
 
       const onhandleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
-        alert('投稿ありがとうございました！\n現在手動での確認ですが、以降様々な改良を施す予定です！');
+        alert('投稿ありがとうございました！\n投稿は正常に完了されたため、ホームに遷移します！');
 
         try {
           // フォームデータをサーバーに送信
@@ -32,7 +31,7 @@ const Contactform: React.FC = () => {
               'Content-Type': 'application/json',},
             body: JSON.stringify(formData),
           });
-    
+
           if (response.ok) {
             console.log('Data saved successfully!');
             // 他の処理を実行（リダイレクトなど）
@@ -46,12 +45,12 @@ const Contactform: React.FC = () => {
 
     return (
             <div>
-                
+
                 <div>
                     <Flex className={styles.prehome}>
                         <h1>Contact Form</h1>
                     </Flex>
-                    
+
                     <Flex className={styles.home}>
                         <form onSubmit={onhandleSubmit}  method='POST' action="/api/contact" className={styles.form}>
                             <div>
@@ -99,7 +98,7 @@ const Contactform: React.FC = () => {
                             </Flex>
                         </form>
                     </Flex >
-                    
+
                 </div>
             </div>
     )

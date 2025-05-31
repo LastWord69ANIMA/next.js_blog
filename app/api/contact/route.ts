@@ -17,7 +17,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       return new NextResponse(body);
   }catch (error) {
       console.error('Error saving data:', error);
-      return new　NextResponse('Error saving data');    
+      return new　NextResponse('Error saving data');
     }
 
 }

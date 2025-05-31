@@ -5,7 +5,7 @@ import { Flex} from "@chakra-ui/react";
 import Header from "@/app/src/components/Header"
 import Footer from '@/app/src/components/Footer';
 
-{/*次回のver.でやること･･･の順序
+{/*次回のver.3.0でやること･･･の順序
     1.UIをモバイルに対応させる
     2.項目のコンポーネント化
     3.職歴と資格欄を、箱内にて箇条書き
@@ -16,11 +16,11 @@ export default function Profile() {
     return(
         <div
         className={styles.Isometric}
-        >       
+        >
                 <Header />
-            
+
             <div>
-                
+
                 <Flex className={styles.home}>
                 --Profile--
                 </Flex>
@@ -69,7 +69,7 @@ export default function Profile() {
             </div>
 
         <Footer />
-        
+
         </div>
     )
 }
