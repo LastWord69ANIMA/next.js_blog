@@ -7,10 +7,11 @@ import Footer from '@/app/src/components/Footer';
 
 {/*次回のver.3.0でやること･･･の順序
     1.UIをモバイルに対応させる
-    2.項目のコンポーネント化
-    3.職歴と資格欄を、箱内にて箇条書き
-    4.新しいanalyticsの使い方確認
-    5.隠し要素（遊び要素）の追加
+    2.資格項目のコンポーネント化
+    ･･･職歴と資格欄を、箱内にて箇条書き
+    3.ブログページをポートフォリオにページ埋め込み
+    ･･･microCMSのAPIを利用してGETリクエストをつかってみる
+    4.隠し要素（遊び要素）の追加
 */}
 export default function Profile() {
     return(
@@ -63,6 +64,10 @@ export default function Profile() {
 
                     <Flex>
                         2024/12 CCNA(200-301)
+                    </Flex>
+
+                    <Flex>
+                        2025/6 AWS-SAA
                     </Flex>
                 </div>
 
