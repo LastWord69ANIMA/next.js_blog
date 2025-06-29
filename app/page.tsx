@@ -16,7 +16,7 @@ export default function Home() {
 
     <div>
         <Flex className={styles.home}>
-            ポートフォリオ v2.3
+            ポートフォリオ v2.4
         </Flex>
     </div>
 
